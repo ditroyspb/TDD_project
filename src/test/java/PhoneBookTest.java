@@ -32,6 +32,18 @@ public class PhoneBookTest {
         assertEquals(expectedName, resultName);
     }
 
+    @Test
+    public void findByName() {
+        //arrange
+        String name = "Artem";
+        String expectedNumber = "89113334455";
+        sut.add(name, expectedNumber);
+        //act
+        String resultNumber = sut.findByName(name);
+        //assert
+        assertEquals(expectedNumber, resultNumber);
+    }
+
     @BeforeEach
     public void initTest() {
         System.out.println("Test started");
