@@ -28,4 +28,10 @@ public class PhoneBook {
     public String findByName(String name) {
         return contactList.get(name);
     }
+
+    public void printAllNames() {
+        for (Map.Entry<String, String> entry : contactList.entrySet()) {
+            System.out.println(entry.getKey());
+        }
+    }
 }

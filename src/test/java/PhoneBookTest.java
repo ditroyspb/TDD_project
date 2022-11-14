@@ -44,6 +44,22 @@ public class PhoneBookTest {
         assertEquals(expectedNumber, resultNumber);
     }
 
+    @Test
+    public void printAllNames() {
+        //arrange
+        sut.contactList.clear();
+        String name1 = "Petr";
+        String number1 = "89112222222";
+        String name2 = "Andrew";
+        String number2 = "89113333333";
+        sut.add(name1, number1);
+        sut.add(name2, number2);
+        //act
+        String resultName = sut.contactList.firstKey();
+        //assert
+        assertEquals(name2, resultName);
+    }
+
     @BeforeEach
     public void initTest() {
         System.out.println("Test started");
