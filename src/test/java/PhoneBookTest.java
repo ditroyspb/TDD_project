@@ -20,6 +20,18 @@ public class PhoneBookTest {
         assertEquals(expected, result);
     }
 
+    @Test
+    public void findByNumber() {
+        //arrange
+        String expectedName = "Petr";
+        String number = "89112222222";
+        sut.add(expectedName, number);
+        //act
+        String resultName = sut.findByNumber(number);
+        //assert
+        assertEquals(expectedName, resultName);
+    }
+
     @BeforeEach
     public void initTest() {
         System.out.println("Test started");
