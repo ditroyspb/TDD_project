@@ -1,9 +1,11 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 public class PhoneBook {
 
-    public Map<String, String> contactList = new HashMap<>();
+    public SortedMap<String, String> contactList = new TreeMap<>();
 
     public int add(String name, String number) {
         if (!contactList.containsValue(number)) {
@@ -15,6 +17,11 @@ public class PhoneBook {
     }
 
     public String findByNumber(String number) {
+        for (Map.Entry<String, String> entry : contactList.entrySet()) {
+            if (entry.getValue().equals(number)) {
+                return entry.getKey();
+            }
+        }
         return null;
     }
 }
